@@ -1,207 +1,119 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Enquete</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	 <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" integrity="sha256-xbQIJkhfOw0Dry1H9lawvXRi9XcqdE8jDBZx1Op/mz8=" crossorigin="anonymous" />
-    <style>
-        #magister,
-        #error,
-        .magisterspinner,
-        #vraag1 {
-            display: none;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container" id="error">
-        <br>
-        <br>
-        <h1 class="header center red-text">Error</h1>
-        <br>
-        <br>
-        <h5 class="center">Er is iets fout gegaan. Probeer het op een later moment opnieuw.</h5>
-    </div>
-    <div class="container" id="start">
-        <br>
-        <br>
-        <h1 class="header center orange-text">Enqu&#xEA;te</h1>
-        <div class="row center">
-            <h5 class="header col s12 light">Je gaat een enquete invullen over een nieuw onderwijssysteem op Hageveld. Voordat je kan beginnen moet je eerst inloggen op Magister.</h5>
-        </div>
-        <div class="row center">
-            <a href="#" id="beginnen" class="btn-large waves-effect waves-light orange">Beginnen</a>
-        </div>
-        <br>
-        <br>
-
-    </div>
-
-    <div class="container" id="vraag1">
-        <br>
-        <br>
-        <h3 class="header center orange-text">Met welke vakken heb jij moeite?</h3>
-        <div class="row center">
-            <form class="vakkenmoeite">
-
-            </form>
-        </div>
-        <div class="row center">
-            <a href="#" id="volgende1" class="btn-large waves-effect waves-light orange">Volgende</a>
-        </div>
-        <br>
-        <br>
-
-    </div>
-
-    <div class="container" id="magister">
-        <br>
-        <br>
-        <h1 class="header center orange-text">Magister</h1>
-        <div class="section magister">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="username" type="text" class="validate">
-                        <label for="username">Gebruikersnaam</label>
-                    </div>
-                </div>
-            </form>
-
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Wachtwoord</label>
-                    </div>
-                </div>
-            </form>
-
-            <button class="btn waves-effect waves-light" id="login" type="submit" name="action">Inloggen
-                <i class="material-icons right">send</i>
-            </button>
-
-        </div>
-        <div class="magisterspinner">
-            <div class="col s12 m4 center">
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <div class="preloader-wrapper big active">
-                    <div class="spinner-layer spinner-blue">
-                        <div class="circle-clipper left">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="gap-patch">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="circle-clipper right">
-                            <div class="circle"></div>
-                        </div>
-                    </div>
-
-                    <div class="spinner-layer spinner-red">
-                        <div class="circle-clipper left">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="gap-patch">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="circle-clipper right">
-                            <div class="circle"></div>
-                        </div>
-                    </div>
-
-                    <div class="spinner-layer spinner-yellow">
-                        <div class="circle-clipper left">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="gap-patch">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="circle-clipper right">
-                            <div class="circle"></div>
-                        </div>
-                    </div>
-
-                    <div class="spinner-layer spinner-green">
-                        <div class="circle-clipper left">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="gap-patch">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="circle-clipper right">
-                            <div class="circle"></div>
-                        </div>
-                    </div>
-                </div>
+---
+layout: page
+---
+<div class="container" id="error">
+   <br>
+   <br>
+   <h1 class="header center red-text">Error</h1>
+   <br>
+   <br>
+   <h5 class="center">Er is iets fout gegaan. Probeer het op een later moment opnieuw.</h5>
+</div>
+<div class="container" id="start">
+   <br>
+   <br>
+   <h1 class="header center orange-text">Enqu&#xEA;te</h1>
+   <div class="row center">
+      <h5 class="header col s12 light">Je gaat een enquete invullen over een nieuw onderwijssysteem op Hageveld. Voordat je kan beginnen moet je eerst inloggen op Magister.</h5>
+   </div>
+   <div class="row center">
+      <a id="beginnen" class="btn-large waves-effect waves-light orange">Beginnen</a>
+   </div>
+   <br>
+   <br>
+</div>
+<div class="container" id="vraag1">
+   <br>
+   <br>
+   <h3 class="header center orange-text">Met welke vakken heb jij moeite?</h3>
+   <div class="row center">
+      <form class="vakkenmoeite">
+      </form>
+   </div>
+   <div class="row center">
+      <a id="volgende1" class="btn-large waves-effect waves-light orange">Volgende</a>
+   </div>
+   <br>
+   <br>
+</div>
+<div class="container" id="magister">
+   <br>
+   <br>
+   <h1 class="header center orange-text"><i class="medium material-icons bottom">group</i> Magister</h1>
+   <div class="section magister">
+      <form class="col s12">
+         <div class="row">
+            <div class="input-field col s12">
+               <input id="username" type="text" class="validate">
+               <label for="username">Gebruikersnaam</label>
             </div>
-        </div>
-		</div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js" integrity="sha256-lVmbGVbzHBkNHCUK0y+z2AyJei/v7jSNYppXTcq2FtU=" crossorigin="anonymous"></script>
-<script>
-var userinfo;
-var antwoorden = [];
-
-function shuffle(array) {
-    var currentIndex = array.length,
-        temporaryValue, randomIndex;
-    while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-    return array;
-}
-
-$("#beginnen").click(function() {
-    $("#start").fadeOut("", function() {
-        $("#magister").fadeIn();
-    });
-});
-$("#login").click(function() {
-    $(".section.magister").fadeOut("", function() {
-        $(".magisterspinner").fadeIn();
-    });
-    $.get("https://luithollander.nl/magister/v3.php?username=" + encodeURIComponent($("#username").val()) + "&password=" + encodeURIComponent($("#password").val()), function(data) {
-            userinfo = JSON.parse(data);
-            if (userinfo.error) {
-                $("#magister").fadeOut("", function() {
-                    $("#error").fadeIn();
-                });
-            } else if (userinfo.success && !userinfo.error) {
-                $("#magister").fadeOut("", function() {
-                    $("#vraag1").fadeIn();
-                });
-                userinfo.vakken = shuffle(userinfo.vakken);
-                $.each(userinfo.vakken, function(i, vak) {
-                    if ($.inArray(vak.afkorting, ["me", "lo", "rt3F", "MS"]) === -1) {// && (vak.afkorting != "wisA" || (vak.afkorting == "wisA" && ))) {
-                        $(".vakkenmoeite").append("<p><input type='checkbox' id='" + vak.afkorting + "' /><label for='" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
-                    }
-                });
-            } else {
-                setTimeout(function() {
-                    $(".magisterspinner").fadeOut("", function() {
-                        $(".section.magister").fadeIn();
-                        Materialize.toast('Verkeerde gebruikersnaam of wachtwoord!', 4000)
-                    });
-                }, 1000);
-            }
-        })
-        .fail(function() {
-            Materialize.toast('Geen internetverbinding', 4000)
-        })
-});
-</script>
-</body>
-</html>
+         </div>
+      </form>
+      <form class="col s12">
+         <div class="row">
+            <div class="input-field col s12">
+               <input id="password" type="password" class="validate">
+               <label for="password">Wachtwoord</label>
+            </div>
+         </div>
+      </form>
+      <button class="btn waves-effect waves-light" id="login" type="submit" name="action">Inloggen
+      <i class="material-icons right">send</i>
+      </button>
+   </div>
+   <div class="magisterspinner">
+      <div class="col s12 m4 center">
+         <BR>
+         <BR>
+         <BR>
+         <BR>
+         <BR>
+         <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue">
+               <div class="circle-clipper left">
+                  <div class="circle"></div>
+               </div>
+               <div class="gap-patch">
+                  <div class="circle"></div>
+               </div>
+               <div class="circle-clipper right">
+                  <div class="circle"></div>
+               </div>
+            </div>
+            <div class="spinner-layer spinner-red">
+               <div class="circle-clipper left">
+                  <div class="circle"></div>
+               </div>
+               <div class="gap-patch">
+                  <div class="circle"></div>
+               </div>
+               <div class="circle-clipper right">
+                  <div class="circle"></div>
+               </div>
+            </div>
+            <div class="spinner-layer spinner-yellow">
+               <div class="circle-clipper left">
+                  <div class="circle"></div>
+               </div>
+               <div class="gap-patch">
+                  <div class="circle"></div>
+               </div>
+               <div class="circle-clipper right">
+                  <div class="circle"></div>
+               </div>
+            </div>
+            <div class="spinner-layer spinner-green">
+               <div class="circle-clipper left">
+                  <div class="circle"></div>
+               </div>
+               <div class="gap-patch">
+                  <div class="circle"></div>
+               </div>
+               <div class="circle-clipper right">
+                  <div class="circle"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
