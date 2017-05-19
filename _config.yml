@@ -14,7 +14,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Enquête
-email: 10898@hageveld.nl
+introductie: Je gaat een enquete invullen over een nieuw onderwijssysteem op Hageveld. Voordat je kan beginnen moet je eerst inloggen op Magister.
+vraag1: Met welke vakken heb jij moeite?
 
 # Build settings
 gems:

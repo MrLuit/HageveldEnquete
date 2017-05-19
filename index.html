@@ -14,7 +14,7 @@ layout: page
    <br>
    <h1 class="header center orange-text">Enqu&#xEA;te</h1>
    <div class="row center">
-      <h5 class="header col s12 light">Je gaat een enquete invullen over een nieuw onderwijssysteem op Hageveld. Voordat je kan beginnen moet je eerst inloggen op Magister.</h5>
+      <h5 class="header col s12 light">{{ site.introductie }}</h5>
    </div>
    <div class="row center">
       <a id="beginnen" class="btn-large waves-effect waves-light orange">Beginnen</a>
@@ -23,7 +23,7 @@ layout: page
    <br>
 </div>
 <div class="container" id="vraag1">
-   <h3 class="header center orange-text">Met welke vakken heb jij moeite?</h3>
+   <h3 class="header center orange-text">{{ site.vraag1 }}</h3>
    <br>
    <div class="row center checklist">
       <form class="vakkenmoeite">
@@ -46,10 +46,6 @@ layout: page
                <input id="username" type="text" class="validate">
                <label for="username">Gebruikersnaam</label>
             </div>
-         </div>
-      </form>
-      <form class="col s12">
-         <div class="row">
             <div class="input-field col s12">
                <input id="password" type="password" class="validate">
                <label for="password">Wachtwoord</label>
