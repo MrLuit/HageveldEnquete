@@ -36,7 +36,6 @@ function connectToMagister() {
                     $(".section.magister").fadeIn();
                     Materialize.toast('Je hebt de enquête al ingevuld!', 6000)
                 });
-			}
             } else {
                 setTimeout(function() {
                     $(".magisterspinner").fadeOut("", function() {
