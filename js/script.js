@@ -75,11 +75,13 @@ $(document).ready(function() {
         }
     });
     $("#beginnen").click(function() {
+		$("html, body").animate({ scrollTop: 0 }, "slow");
         $("#start").fadeOut("", function() {
             $("#magister").fadeIn();
         });
     });
     $("#login").click(function() {
+		$("html, body").animate({ scrollTop: 0 }, "slow");
         $(".section.magister").fadeOut("", function() {
             $(".magisterspinner").fadeIn();
         });
