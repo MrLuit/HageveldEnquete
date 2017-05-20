@@ -21,16 +21,22 @@ function connectToMagister() {
                 $("#magister").fadeOut("", function() {
                     $("#error").fadeIn();
                 });
-            } else if (userinfo.success && !userinfo.error) {
+            } else if (userinfo.success && !userinfo.error && !userinfo.ingevuld) {
                 $("#magister").fadeOut("", function() {
                     $("#vraag1").fadeIn();
                 });
                 userinfo.vakken = shuffle(userinfo.vakken);
                 $.each(userinfo.vakken, function(i, vak) {
-                    if ($.inArray(vak.afkorting, ["me", "lo", "rt3F", "MS", "mvt"]) === -1 && vak.afkorting.indexOf("sl_") === -1 && vak.afkorting.indexOf("co_") === -1) { // WISA / WISAC        LO, HV, TE, MU, DR?
+                    if ($.inArray(vak.afkorting, ["me", "rt3F", "MS", "mvt"]) === -1 && vak.afkorting.indexOf("sl_") === -1 && vak.afkorting.indexOf("co_") === -1) { // WISA / WISAC        LO, HV, TE, MU, DR?
                         $(".vakkenmoeite").append("<p><input name='moeite' type='checkbox' id='" + vak.afkorting + "' /><label for='" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
                     }
                 });
+			} else if(userinfo.ingevuld) {
+				$(".magisterspinner").fadeOut("", function() {
+                    $(".section.magister").fadeIn();
+                    Materialize.toast('Je hebt de enquête al ingevuld!', 6000)
+                });
+			}
             } else {
                 setTimeout(function() {
                     $(".magisterspinner").fadeOut("", function() {

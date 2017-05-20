@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Enquête
 gesloten: false
-online: false
+online: true
 
 introductie: Je gaat een enquete invullen over een nieuw onderwijssysteem op Hageveld. Voordat je kan beginnen moet je eerst inloggen op Magister.
 storing: We ondervinden momenteel een storing. Kom op een later moment terug.
