@@ -1,6 +1,7 @@
 ---
 layout: page
 ---
+{% if site.online %}
 <div class="container" id="error">
    <h1 class="header center red-text">Error</h1>
    <br>
@@ -111,3 +112,8 @@ layout: page
       </div>
    </div>
 </div>
+{% elsif site.gesloten %}
+{% include gesloten.html %}
+{% else %}
+{% include offline.html %}
+{% endif %}
