@@ -1,1 +1,3 @@
-# Hageveld Enqu�te 2017
+﻿# Hageveld Enquête 2017
+
+Onderwijsenquête Hageveld 2017
