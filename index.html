@@ -2,16 +2,12 @@
 layout: page
 ---
 <div class="container" id="error">
-   <br>
-   <br>
    <h1 class="header center red-text">Error</h1>
    <br>
    <br>
    <h5 class="center">Er is iets fout gegaan. Probeer het op een later moment opnieuw.</h5>
 </div>
 <div class="container" id="start">
-   <br>
-   <br>
    <h1 class="header center orange-text">Enqu&#xEA;te</h1>
    <div class="row center">
       <h5 class="header col s12 light">{{ site.introductie }}</h5>
@@ -30,14 +26,17 @@ layout: page
       </form>
    </div>
    <div class="row center">
-      <a id="volgende1" class="btn-large waves-effect waves-light orange">Volgende</a>
+      <a id="klaar" class="btn-large waves-effect waves-light orange">Volgende</a>
    </div>
    <br>
    <br>
 </div>
+<div class="container" id="einde">
+   <h1 class="header center orange-text">Einde</h1>
+   <br>
+   <h5 class="center">{{ site.einde }}</h5>
+</div>
 <div class="container" id="magister">
-   <br>
-   <br>
    <h2 class="header center orange-text"><i class="medium material-icons bottom">group</i> Magister</h2>
    <div class="section magister">
       <form class="col s12">
