@@ -30,7 +30,7 @@ function connectToMagister() {
                     if ($.inArray(vak.afkorting, ["me", "rt3F", "MS", "mvt"]) === -1 && vak.afkorting.indexOf("sl_") === -1 && vak.afkorting.indexOf("co_") === -1) { // WISA / WISAC        LO, HV, TE, MU, DR?
                         $(".vakkenmoeite").append("<p><input name='moeite' type='checkbox' id='" + vak.afkorting + "' /><label for='" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
 						$(".vakkenuitdaging").append("<p><input name='uitdaging' type='checkbox' id='" + vak.afkorting + "' /><label for='" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
-						$(".vakkenverveling").append("<p><input name='uitdaging' type='checkbox' id='" + vak.afkorting + "' /><label for='" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
+						$(".vakkenverveling").append("<p><input name='verveling' type='checkbox' id='" + vak.afkorting + "' /><label for='" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
                     }
                 });
 			} else if(userinfo.ingevuld) {
