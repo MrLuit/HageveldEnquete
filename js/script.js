@@ -59,7 +59,7 @@ function connectToMagister() {
 
 function finishUp() {
     $.get("https://lu1t.nl/enquete.php?data=" + encodeURIComponent(JSON.stringify(antwoorden)), function(data) {
-            $("#vraag1").fadeOut("", function() {
+            $("#vraag6").fadeOut("", function() {
                 $("#einde").fadeIn();
             });
         })
