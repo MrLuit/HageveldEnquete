@@ -51,7 +51,10 @@ layout: page
     <form>
     <p>
       <input name="vraag3" type="radio" id="ja" />
-      <label for="ja">Ja</label>
+      <label for="ja">Ja, namelijk <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email" data-error="wrong" data-success="right">Email</label>
+        </div></label>
     </p>
     <p>
       <input name="vraag3" type="radio" id="nee" />
@@ -64,40 +67,22 @@ layout: page
    <br>
    <br>
 </div>
-<div class="container" id="vraag3b">
-   <h3 class="header center orange-text">{{ site.vraag3b }}</h3>
-   <br>
-     <div class="row center">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="input_text" type="text" data-length="10">
-            <label for="input_text">Leesclub, kookclub, schoolkrant, etc.</label> 
-			<i class="material-icons">add_circle</i>
-          </div>
-        </div>
-      </form>
-    </div>
-   <div class="row center">
-      <a id="volgende3b" class="btn-large waves-effect waves-light orange">Volgende</a>
-   </div>
-   <br>
-   <br>
-</div>
 <div class="container" id="vraag4">
    <h3 class="header center orange-text">{{ site.vraag4 }}</h3>
    <br>
-     <div class="row center">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="input_text" type="text" data-length="10">
-            <label for="input_text">Leesclub, kookclub, schoolkrant, etc.</label> 
-			<i class="material-icons">add_circle</i>
-          </div>
-        </div>
-      </form>
-    </div>
+     <form>
+    <p>
+      <input name="vraag4" type="radio" id="ja" />
+      <label for="ja">Ja, namelijk <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email" data-error="wrong" data-success="right">Email</label>
+        </div></label>
+    </p>
+    <p>
+      <input name="vraag3" type="radio" id="nee" />
+      <label for="nee">Nee</label>
+    </p>
+  </form>
    <div class="row center">
       <a id="volgende4" class="btn-large waves-effect waves-light orange">Volgende</a>
    </div>

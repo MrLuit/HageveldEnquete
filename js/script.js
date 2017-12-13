@@ -122,11 +122,6 @@ $(document).ready(function() {
 			});
 		}
 	});
-	$("#volgende3b").click(function() {
-		$("#vraag3b").fadeOut("", function() {
-			$("#vraag4").fadeIn();
-		});
-	});
 	$("#volgende4").click(function() {
 		$("#vraag4").fadeOut("", function() {
 			$("#vraag5").fadeIn();
