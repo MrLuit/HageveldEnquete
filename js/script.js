@@ -27,7 +27,7 @@ function connectToMagister() {
                 });
                 userinfo.vakken = shuffle(userinfo.vakken);
                 $.each(userinfo.vakken, function(i, vak) {
-                    if ($.inArray(vak.afkorting, ["me", "rt3F", "MS", "mvt"]) === -1 && vak.afkorting.indexOf("sl_") === -1 && vak.afkorting.indexOf("co_") === -1) {
+                    if ($.inArray(vak.afkorting, ["me", "rt3F", "MS", "mvt"]) === -1 && vak.afkorting.indexOf("sl_") === -1 && vak.afkorting.indexOf("co_") === -1 && vak.afkorting.indexOf("mmc_") === -1) {
                         $(".vakkenmoeite").append("<p><input name='moeite' type='checkbox' id='m" + vak.afkorting + "' /><label for='m" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
                         $(".vakkenuitdaging").append("<p><input name='uitdaging' type='checkbox' id='u" + vak.afkorting + "' /><label for='u" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
                         $(".vakkenverveling").append("<p><input name='verveling' type='checkbox' id='v" + vak.afkorting + "' /><label for='v" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
