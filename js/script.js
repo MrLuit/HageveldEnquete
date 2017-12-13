@@ -29,12 +29,12 @@ function connectToMagister() {
                 $.each(userinfo.vakken, function(i, vak) {
                     if ($.inArray(vak.afkorting, ["me", "rt3F", "MS", "mvt"]) === -1 && vak.afkorting.indexOf("sl_") === -1 && vak.afkorting.indexOf("co_") === -1) {
                         $(".vakkenmoeite").append("<p><input name='moeite' type='checkbox' id='m" + vak.afkorting + "' /><label for='m" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
-						$(".vakkenuitdaging").append("<p><input name='uitdaging' type='checkbox' id='u" + vak.afkorting + "' /><label for='u" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
-						$(".vakkenverveling").append("<p><input name='verveling' type='checkbox' id='v" + vak.afkorting + "' /><label for='v" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
+                        $(".vakkenuitdaging").append("<p><input name='uitdaging' type='checkbox' id='u" + vak.afkorting + "' /><label for='u" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
+                        $(".vakkenverveling").append("<p><input name='verveling' type='checkbox' id='v" + vak.afkorting + "' /><label for='v" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
                     }
                 });
-			} else if(userinfo.ingevuld) {
-				$(".magisterspinner").fadeOut("", function() {
+            } else if (userinfo.ingevuld) {
+                $(".magisterspinner").fadeOut("", function() {
                     $(".section.magister").fadeIn();
                     Materialize.toast('Je hebt de enquête al ingevuld!', 6000)
                 });
@@ -77,73 +77,77 @@ $(document).ready(function() {
         }
     });
     $("#beginnen").click(function() {
-		$("html, body").animate({ scrollTop: 0 }, "slow");
+        $("html, body").animate({
+            scrollTop: 0
+        }, "slow");
         $("#start").fadeOut("", function() {
             $("#magister").fadeIn();
         });
     });
     $("#login").click(function() {
-		$("html, body").animate({ scrollTop: 0 }, "slow");
+        $("html, body").animate({
+            scrollTop: 0
+        }, "slow");
         $(".section.magister").fadeOut("", function() {
             $(".magisterspinner").fadeIn();
         });
         connectToMagister();
     });
-	$("#volgende1").click(function() {
-		var moeite = [];
-		$("input:checkbox[name=moeite]:checked").each(function(){
-			moeite.push($(this).attr('id').substr(1));
-		});
-		antwoorden.push(moeite);
-		$("#vraag1").fadeOut("", function() {
+    $("#volgende1").click(function() {
+        var moeite = [];
+        $("input:checkbox[name=moeite]:checked").each(function() {
+            moeite.push($(this).attr('id').substr(1));
+        });
+        antwoorden.push(moeite);
+        $("#vraag1").fadeOut("", function() {
             $("#vraag2").fadeIn();
         });
-	});
-	$("#volgende2").click(function() {
-		var uitdaging = [];
-		$("input:checkbox[name=uitdaging]:checked").each(function(){
-			uitdaging.push($(this).attr('id').substr(1));
-		});
-		antwoorden.push(uitdaging);
-		$("#vraag2").fadeOut("", function() {
+    });
+    $("#volgende2").click(function() {
+        var uitdaging = [];
+        $("input:checkbox[name=uitdaging]:checked").each(function() {
+            uitdaging.push($(this).attr('id').substr(1));
+        });
+        antwoorden.push(uitdaging);
+        $("#vraag2").fadeOut("", function() {
             $("#vraag3").fadeIn();
         });
-	});
-	$("#volgende3").click(function() {
-		var antwoord = $('input[name=vraag3]:checked').prop('id');
-		if(antwoord.toLowerCase() == 'ja') {
-			antwoorden.push($("#vraag3i").val().split(', '));
-		} else {
-			antwoorden.push({});
-		}
-		$("#vraag3").fadeOut("", function() {
-			$("#vraag4").fadeIn();
-		});
-	});
-	$("#volgende4").click(function() {
-		var antwoord = $('input[name=vraag4]:checked').prop('id');
-		if(antwoord.toLowerCase() == 'ja') {
-			antwoorden.push($("#vraag4i").val().split(', '));
-		} else {
-			antwoorden.push({});
-		}
-		$("#vraag4").fadeOut("", function() {
-			$("#vraag5").fadeIn();
-		});
-	});
-	$("#volgende5").click(function() {
-		var verveling = [];
-		$("input:checkbox[name=verveling]:checked").each(function(){
-			verveling.push($(this).attr('id').substr(1));
-		});
-		antwoorden.push(verveling);
-		$("#vraag5").fadeOut("", function() {
+    });
+    $("#volgende3").click(function() {
+        var antwoord = $('input[name=vraag3]:checked').prop('id');
+        if (antwoord.toLowerCase() == 'ja') {
+            antwoorden.push($("#vraag3i").val().split(', '));
+        } else {
+            antwoorden.push({});
+        }
+        $("#vraag3").fadeOut("", function() {
+            $("#vraag4").fadeIn();
+        });
+    });
+    $("#volgende4").click(function() {
+        var antwoord = $('input[name=vraag4]:checked').prop('id');
+        if (antwoord.toLowerCase() == 'ja') {
+            antwoorden.push($("#vraag4i").val().split(', '));
+        } else {
+            antwoorden.push({});
+        }
+        $("#vraag4").fadeOut("", function() {
+            $("#vraag5").fadeIn();
+        });
+    });
+    $("#volgende5").click(function() {
+        var verveling = [];
+        $("input:checkbox[name=verveling]:checked").each(function() {
+            verveling.push($(this).attr('id').substr(1));
+        });
+        antwoorden.push(verveling);
+        $("#vraag5").fadeOut("", function() {
             $("#vraag6").fadeIn();
         });
-	});
+    });
     $("#klaar").click(function() {
-		var antwoord = $('input[name=vraag6]:checked').prop('id');
-		antwoorden.push(antwoord.toLowerCase());
+        var antwoord = $('input[name=vraag6]:checked').prop('id');
+        antwoorden.push(antwoord.toLowerCase());
         finishUp();
     });
 });
