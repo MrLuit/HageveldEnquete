@@ -28,9 +28,9 @@ function connectToMagister() {
                 userinfo.vakken = shuffle(userinfo.vakken);
                 $.each(userinfo.vakken, function(i, vak) {
                     if ($.inArray(vak.afkorting, ["me", "rt3F", "MS", "mvt"]) === -1 && vak.afkorting.indexOf("sl_") === -1 && vak.afkorting.indexOf("co_") === -1) { // WISA / WISAC        LO, HV, TE, MU, DR?
-                        $(".vakkenmoeite").append("<p><input name='moeite' type='checkbox' id='" + vak.afkorting + "' /><label for='" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
-						$(".vakkenuitdaging").append("<p><input name='uitdaging' type='checkbox' id='" + vak.afkorting + "' /><label for='" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
-						$(".vakkenverveling").append("<p><input name='verveling' type='checkbox' id='" + vak.afkorting + "' /><label for='" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
+                        $(".vakkenmoeite").append("<p><input name='moeite' type='checkbox' id='m" + vak.afkorting + "' /><label for='m" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
+						$(".vakkenuitdaging").append("<p><input name='uitdaging' type='checkbox' id='u" + vak.afkorting + "' /><label for='u" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
+						$(".vakkenverveling").append("<p><input name='verveling' type='checkbox' id='v" + vak.afkorting + "' /><label for='v" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
                     }
                 });
 			} else if(userinfo.ingevuld) {
@@ -92,7 +92,7 @@ $(document).ready(function() {
 	$("#volgende1").click(function() {
 		var moeite = [];
 		$("input:checkbox[name=moeite]:checked").each(function(){
-			moeite.push($(this).attr('id'));
+			moeite.push($(this).attr('id').substr(1));
 		});
 		antwoorden.push(moeite);
 		$("#vraag1").fadeOut("", function() {
@@ -102,7 +102,7 @@ $(document).ready(function() {
 	$("#volgende2").click(function() {
 		var uitdaging = [];
 		$("input:checkbox[name=moeite]:checked").each(function(){
-			uitdaging.push($(this).attr('id'));
+			uitdaging.push($(this).attr('id').substr(1));
 		});
 		antwoorden.push(uitdaging);
 		$("#vraag2").fadeOut("", function() {
