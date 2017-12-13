@@ -114,7 +114,7 @@ $(document).ready(function() {
         });
     });
     $("#volgende3").click(function() {
-        var antwoord = $('input[name=vraag3]:checked').prop('id');
+        var antwoord = $('input[name=vraag3]:checked').prop('id').substr(1);
         if (antwoord.toLowerCase() == 'ja') {
             antwoorden.push($("#vraag3i").val().split(', '));
         } else {
@@ -125,7 +125,7 @@ $(document).ready(function() {
         });
     });
     $("#volgende4").click(function() {
-        var antwoord = $('input[name=vraag4]:checked').prop('id');
+        var antwoord = $('input[name=vraag4]:checked').prop('id').substr(1);
         if (antwoord.toLowerCase() == 'ja') {
             antwoorden.push($("#vraag4i").val().split(', '));
         } else {
@@ -147,7 +147,7 @@ $(document).ready(function() {
     });
     $("#klaar").click(function() {
         var antwoord = $('input[name=vraag6]:checked').prop('id');
-        antwoorden.push(antwoord.toLowerCase());
+        antwoorden.push(antwoord.toLowerCase().substr(1));
         finishUp();
     });
 });
