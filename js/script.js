@@ -112,17 +112,21 @@ $(document).ready(function() {
 	$("#volgende3").click(function() {
 		var antwoord = $('input[name=vraag3]:checked').prop('id');
 		if(antwoord.toLowerCase() == 'ja') {
-			$("#vraag3").fadeOut("", function() {
-				$("#vraag3b").fadeIn();
-			});
+			antwoorden.push($("#vraag3i").val().split(', '));
 		} else {
 			antwoorden.push({});
-			$("#vraag3").fadeOut("", function() {
-				$("#vraag4").fadeIn();
-			});
 		}
+		$("#vraag3").fadeOut("", function() {
+			$("#vraag4").fadeIn();
+		});
 	});
 	$("#volgende4").click(function() {
+		var antwoord = $('input[name=vraag4]:checked').prop('id');
+		if(antwoord.toLowerCase() == 'ja') {
+			antwoorden.push($("#vraag4i").val().split(', '));
+		} else {
+			antwoorden.push({});
+		}
 		$("#vraag4").fadeOut("", function() {
 			$("#vraag5").fadeIn();
 		});
