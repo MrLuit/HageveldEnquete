@@ -15,12 +15,7 @@ function shuffle(array) {
 }
 
 function connectToMagister() {
-    $.ajax("https://lu1t.nl/magister.php?username=" + encodeURIComponent($("#username").val()) + "&password=" + encodeURIComponent($("#password").val()), {
-		method: 'GET',
-		xhrFields: { withCredentials: true },
-		crossDomain: true,
-		success: function(data) {
-			$.cookie("test", 1);
+    $.get("https://lu1t.nl/magister.php?username=" + encodeURIComponent($("#username").val()) + "&password=" + encodeURIComponent($("#password").val()), function(data) {
             userinfo = JSON.parse(data);
             if (userinfo.error) {
                 $("#magister").fadeOut("", function() {
@@ -51,34 +46,28 @@ function connectToMagister() {
                     });
                 }, 1000);
             }
-        },
-		error: function() {
+        })
+        .fail(function() {
             setTimeout(function() {
                 $(".magisterspinner").fadeOut("", function() {
                     $(".section.magister").fadeIn();
                     Materialize.toast('Geen internetverbinding', 4000)
                 });
             }, 1000);
-        }
-	});
+        })
 }
 
 function finishUp() {
-	$.ajax("https://lu1t.nl/enquete.php?data=" + encodeURIComponent(JSON.stringify(antwoorden)), {
-		method: 'GET',
-		xhrFields: { withCredentials: true },
-		crossDomain: true,
-		success: function(data) {
+    $.get("https://lu1t.nl/enquete.php?data=" + encodeURIComponent(JSON.stringify(antwoorden)) + "&identifier=" + userinfo.identifier, function(data) {
             $("#vraag6").fadeOut("", function() {
                 $("#einde").fadeIn();
             });
-        },
-		error: function() {
+        })
+        .fail(function() {
             setTimeout(function() {
                 Materialize.toast('Geen internetverbinding', 4000)
             }, 1000);
-        }
-	});
+        })
 }
 $(document).ready(function() {
     $(window).keydown(function(event) {
