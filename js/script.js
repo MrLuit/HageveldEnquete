@@ -29,6 +29,8 @@ function connectToMagister() {
                 $.each(userinfo.vakken, function(i, vak) {
                     if ($.inArray(vak.afkorting, ["me", "rt3F", "MS", "mvt"]) === -1 && vak.afkorting.indexOf("sl_") === -1 && vak.afkorting.indexOf("co_") === -1) { // WISA / WISAC        LO, HV, TE, MU, DR?
                         $(".vakkenmoeite").append("<p><input name='moeite' type='checkbox' id='" + vak.afkorting + "' /><label for='" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
+						$(".vakkenuitdaging").append("<p><input name='uitdaging' type='checkbox' id='" + vak.afkorting + "' /><label for='" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
+						$(".vakkenverveling").append("<p><input name='uitdaging' type='checkbox' id='" + vak.afkorting + "' /><label for='" + vak.afkorting + "'>" + vak.omschrijving + "</label></p>");
                     }
                 });
 			} else if(userinfo.ingevuld) {
@@ -88,14 +90,42 @@ $(document).ready(function() {
         connectToMagister();
     });
 	$("#volgende1").click(function() {
-		moeite = [];
+		var moeite = [];
 		$("input:checkbox[name=moeite]:checked").each(function(){
 			moeite.push($(this).attr('id'));
 		});
 		antwoorden.push(moeite);
-		//volgende vraag fadeOut fadeIn etc
+		$("#vraag1").fadeOut("", function() {
+            $("#vraag2").fadeIn();
+        });
 	});
+	$("#volgende2").click(function() {
+		var uitdaging = [];
+		$("input:checkbox[name=moeite]:checked").each(function(){
+			uitdaging.push($(this).attr('id'));
+		});
+		antwoorden.push(uitdaging);
+		$("#vraag2").fadeOut("", function() {
+            $("#vraag3").fadeIn();
+        });
+	});
+	$("#volgende3").click(function() {
+		var antwoord = $('input[name=vraag3]:checked').val();
+		if(antwoord.toLowerCase() == 'ja') {
+			$("#vraag3").fadeOut("", function() {
+				$("#vraag3b").fadeIn();
+			});
+		} else {
+			antwoorden.push({});
+			$("#vraag3").fadeOut("", function() {
+				$("#vraag4").fadeIn();
+			});
+		}
+	});
+	
     $("#klaar").click(function() {
+		var antwoord = $('input[name=vraag6]:checked').val();
+		antwoorden.push(antwoord.toLowerCase());
         finishUp();
     });
 });
