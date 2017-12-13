@@ -118,7 +118,7 @@ $(document).ready(function() {
         if (antwoord.toLowerCase() == 'ja') {
             antwoorden.push($("#vraag3i").val().split(', '));
         } else {
-            antwoorden.push({});
+            antwoorden.push([]);
         }
         $("#vraag3").fadeOut("", function() {
             $("#vraag4").fadeIn();
